@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>イベント</title> 
+    <script> 
+        //DOM（HTML）構造が読み込まれたら 
+        document.addEventListener('DOMContentLoaded', function () { 
+            let x = document.getElementById("button"); 
+            x.addEventListener("mouseover", mouseOverFunction); 
+            x.addEventListener("click", clickFunction); 
+            x.addEventListener("mouseout", mouseOutFunction); 
+        }, false); 
+        function mouseOverFunction() { 
+            document.getElementById("test").innerHTML += "Moused over!<br>"; 
+        } 
+        function clickFunction() { 
+            document.getElementById("test").innerHTML += "Clicked!<br>"; 
+        } 
+        function mouseOutFunction() { 
+            document.getElementById("test").innerHTML += "Moused out!<br>"; 
+        } 
+    </script> 
+<body> 
+    <p id="sample">イベントのテスト</p> 
+    <button id="button">ボタン</button> 
+    <p id="test"></p> 
+</body>
+</html>
